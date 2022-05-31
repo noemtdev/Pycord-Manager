@@ -9,7 +9,7 @@ from utils import Cog
 class Fun(Cog):
     """A cog for fun commands."""
 
-    @command()
+    @command(aliases=["howmany", "hm"])
     async def how_many(self, ctx: Context, *, text):
         """Shows the amount of people that has the supplied text in their display name."""
         text = text.strip().lower()
@@ -35,7 +35,7 @@ class Fun(Cog):
         await message.add_reaction("🅰")
         await message.add_reaction("🅱")
 
-    @poll.command()
+    @poll.command(aliases=["yn"])
     async def yesno(self, ctx: Context, *, question):
         """Create a poll with the options being yes or no."""
         message = await ctx.send(
